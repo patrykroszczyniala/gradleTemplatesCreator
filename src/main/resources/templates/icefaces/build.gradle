@@ -1,0 +1,14 @@
+apply plugin: 'eclipse-wtp'
+apply plugin: 'war'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	compile 'com.sun.faces:jsf-api:2.2.2'
+	compile 'com.sun.faces:jsf-impl:2.2.2'
+	compile 'org.icefaces:icefaces:3.3.0'
+	compile 'org.icefaces:icefaces-compat:3.3.0'
+	compile 'org.icefaces:icefaces-ace:3.3.0'
+}
