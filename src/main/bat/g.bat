@@ -6,6 +6,8 @@ rem cwd = %CD%
 if "%1"=="icefaces" (
 	echo 'Creating icefaces project...'
 	xcopy "%~dp0\templates\icefaces\*" "%CD%" /E /Q /R /Y
+	echo 'Generating eclipse files...'
+	gradle eclipse
 	goto success
 )
 
