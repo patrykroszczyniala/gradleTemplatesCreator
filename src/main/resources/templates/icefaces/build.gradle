@@ -12,3 +12,8 @@ dependencies {
 	compile 'org.icefaces:icefaces-compat:3.3.0'
 	compile 'org.icefaces:icefaces-ace:3.3.0'
 }
+
+eclipse.classpath.file.withXml {
+	it.asNode().appendNode('classpathentry', [kind:'src', path:'src/main/webapp'])
+	it.asNode().find{it['@kind']=='output'}.@path='build/classes/main'
+}
