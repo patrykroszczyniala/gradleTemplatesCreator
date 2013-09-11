@@ -1,1 +1,19 @@
 apply plugin: 'base'
+
+def installationDir = new File(System.getProperty('user.home'), '.g')
+
+task build(type: Copy) {
+	from 'src/main/bat'
+	from 'src/main/resources'
+	into buildDir
+}
+
+task install(dependsOn: 'build', description: 'Installs app on local computer (to dir '+installationDir+')') << {
+	delete installationDir
+	mkdir installationDir
+	copy {
+		from 'build'
+		into installationDir
+	}
+	println "TO FINISH INSTALLATION YOU NEED TO ADD DIR $installationDir TO %Path% SYSTEM ENVIRONMENT"
+}

@@ -1,0 +1,3 @@
+## Git can't commit empty directories so I created this file
+## Solution found at http://stackoverflow.com/a/932982/2069368
+!.gitignore
